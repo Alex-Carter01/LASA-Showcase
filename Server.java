@@ -5,7 +5,7 @@ import javax.swing.*;
 
 public class Server implements Runnable
 {
-	public List<ClientHolder> list = Collections.synchronizedList(new ArrayList<ClientHolder>());
+    public List<ClientHolder> list = Collections.synchronizedList(new ArrayList<ClientHolder>());
     private boolean isScriptEnabled = false;
     private Thread scriptThread;
     private ServerGUI gui;
@@ -162,6 +162,4 @@ public class Server implements Runnable
             ioe.printStackTrace();
         }
     }
-	
-	
 }
