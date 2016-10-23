@@ -6,7 +6,7 @@ public class ServerRunner {
         try {
             server.start();
         } catch(IOException ioe) {
-            //TODO add something
+            ioe.printStackTrace();
         }
     }
 }
