@@ -147,15 +147,8 @@ public class Server implements Runnable
                 Socket connectionSocket = welcomeSocket.accept();
                 System.out.println("Received connection.");
                 ClientHolder ch = new ClientHolder(connectionSocket, nextId++, this);
-                (new Thread(ch)).start();
+                (new Thread(ch)).start(); //give it its own thread where it pings and listens for data
                 list.add(ch);
-                //BufferedReader inFromClient =
-                //   new BufferedReader(new InputStreamReader(connectionSocket.getInputStream()));
-                //DataOutputStream outToClient = new DataOutputStream(connectionSocket.getOutputStream());
-                //clientSentence = inFromClient.readLine();
-                //System.out.println("Received: " + clientSentence);
-                //capitalizedSentence = clientSentence.toUpperCase() + '\n';
-                //outToClient.writeBytes(capitalizedSentence);
             }
         } catch(IOException ioe) {
             System.err.println("IOException");
